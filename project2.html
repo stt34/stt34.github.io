@@ -1,0 +1,48 @@
+<!-- project2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Microservices Chatroom | My ePortfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="career-goals.html">Career Goals</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="passions.html">Passions</a></li>
+    </ul>
+  </nav>
+  <main class="section" style="padding-top:8rem; max-width:800px; margin:0 auto; text-align:justify;">
+    <h2>Cloud Microservices Chatroom</h2>
+    <p><strong>Overview:</strong> Developed a scalable chat application using Dockerized microservices deployed on AWS. I architected and deployed independent services to handle messaging, user management, and data storage, enabling concurrent real-time communication.</p>
+    <img src="project2.jpg" alt="Microservices Chatroom Architecture Diagram" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+
+    <h3>Objectives & Outcomes</h3>
+    <p>The project’s goal was to decouple components of a chat application into independent microservices for better maintainability and scalability. I deployed each service in Docker containers on EC2 instances, configured security groups and public IPs, and integrated AWS services to achieve a reliable, fault-tolerant system. The result was a robust chatroom that supported seamless messaging for multiple users with persistence and security.</p>
+    <br>
+    <h3>Key Skills & Technologies</h3>
+    <ul>
+      <li>Docker & Docker Compose for containerization</li>
+      <li>AWS EC2 and Security Groups for deployment and network configuration</li>
+      <li>RESTful API design to decouple services</li>
+      <li>DynamoDB for low-latency, redundant chat history storage</li>
+      <li>AWS Cognito for user authentication and authorization</li>
+      <li>CloudFormation for infrastructure as code and automated provisioning</li>
+    </ul>
+    <br>
+    <h3>Lessons Learned</h3>
+    <p>I gained expertise in coordinating multiple microservices, handling inter-service communication, and ensuring system resilience. I also learned to troubleshoot AWS networking issues, optimize DynamoDB throughput, and manage IAM roles for secure access.</p>
+    <br>
+    <a href="projects.html" class="btn-outline">Back to Projects</a>
+  </main>
+  <footer>
+    <p>&copy; 2025 Shyam Tridandapani.</p>
+  </footer>
+</body>
+</html>
