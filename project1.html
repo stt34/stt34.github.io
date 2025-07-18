@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bluetooth Audio & Phone Charger Car Mount | My ePortfolio</title>
+  <title>BMW Bluetooth Audio | My ePortfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,12 +20,14 @@
   </nav>
 
   <main class="section" style="padding-top:8rem; max-width:800px; margin:0 auto; text-align:justify;">
-    <h2>Bluetooth Audio & Phone Charger Car Mount</h2>
+    <h2>BMW Bluetooth Audiot</h2>
 
-    <h3>The Problem</h3>
-    <p>My BMW 128i’s factory USB port only supplies 1 A and there’s no built-in way to stream audio. Originally I planned a phone mount with integrated USB-C charging and analog aux pass-through, but 1 A wasn’t enough for fast charging and analog aux required bulky switches.</p>
+    <h3>Initial Thoughts</h3>
+    <img src="project1-1.jpg" alt="Factory USB Port" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+    <p>My BMW 128i’s factory USB port only supplies 1A and there’s no built-in way to stream audio. Originally I planned a phone mount with integrated USB-C charging and analog aux pass-through, but 1A wasn’t enough for fast charging and analog aux required bulky switches.</p>
 
     <h3>The Process</h3>
+    <img src="project1-2.jpg" alt="Concept Sketch" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
     <ul>
       <li><strong>Pivot to Bluetooth audio (late June):</strong> Switched from analog aux to a CSR8635-based Bluetooth receiver powered by the USB port.</li>
       <li><strong>Prototyping &amp; sourcing (June 27 – July 2):</strong> Cut a USB-A→C cable for power feed, mounted the MakerHawk BT board on perf-proto, and added 10 μF + 0.22 μF decoupling capacitors at the board’s VCC/GND pads (initially misplaced).</li>
@@ -33,19 +35,26 @@
       <li><strong>Packaging &amp; installation (July 6 – July 8):</strong> Designed and 3D-printed a slim bezel for a press-fit behind the console trim; heat-shrinked all splices, secured the board with nylon rivets, and routed USB and 3.5 mm cables through OEM openings.</li>
       <li><strong>Validation (July 9 – July 10):</strong> Verified plug-and-play pairing, zero electrical faults, and stable audio under vibration.</li>
     </ul>
+    <div class="project-images" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+      <img src="project1-3.jpg" alt="Perf-Board Prototype" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
+      <img src="project1-4.jpg" alt="Decoupling Close-Up" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
+      <img src="project1-5.jpg" alt="CAD Bezel Render" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
+      <img src="project1-6.jpg" alt="3D-Printed Bezel" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
+    </div>
 
-    <h3>Successes &amp; Failures</h3>
+    <h4>Roadblocks</h4>
+    <ul>
+      <li>Initial hiss persisted when capacitors were placed too far from the module’s regulator.</li>
+      <li>Multiple connector types (butt splices, terminal blocks) failed under space constraints before settling on direct solder and heat-shrink.</li>
+    </ul>
+    <br>
     <h4>Successes</h4>
     <ul>
       <li>Seamless Bluetooth pairing and stereo playback without an external amplifier.</li>
       <li>Reliable power split: the phone charges at up to 2 A while streaming audio.</li>
       <li>Hiss fully eliminated after proper decoupling placement.</li>
     </ul>
-    <h4>Failures / Roadblocks</h4>
-    <ul>
-      <li>Initial hiss persisted when capacitors were placed too far from the module’s regulator.</li>
-      <li>Multiple connector types (butt splices, terminal blocks) failed under space constraints before settling on direct solder and heat-shrink.</li>
-    </ul>
+    
 
     <h3>ECE Skills Gained</h3>
     <ul>
@@ -58,7 +67,8 @@
     <h3>Final Thoughts &amp; Next Steps</h3>
     <p>This project let me combine my passion for cars with hands-on ECE practice. Next, I’ll refine the enclosure for maximum shock resistance and add a USB on/off switch to prevent parasitic battery drain when the engine is off.</p>
 
-    <img src="project1.jpg" alt="Bluetooth Car Mount Prototype" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+    <img src="project1-7.jpg" alt="Installed Behind Trim" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+    <img src="project1-8.jpg" alt="Final In-Car View" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
 
     <a href="projects.html" class="btn-outline">Back to Projects</a>
   </main>
