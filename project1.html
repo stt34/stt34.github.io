@@ -18,28 +18,51 @@
       <li><a href="passions.html">Passions</a></li>
     </ul>
   </nav>
-  <main class="section" style="padding-top:8rem; max-width:800px; margin:0 auto; text-align:justify;">
-    <h2>(PLACEHOLDER: INCOMPLETE PROJECT) Bluetooth Audio & Phone Charger Car Mount</h2>
-    <p><strong>Overview:</strong> Engineered a multifunctional car mount combining Bluetooth audio streaming and phone charging in a single, compact device. I handled end-to-end development, from hardware design and wiring to firmware programming and user testing.</p>
-    <img src="project1.jpg" alt="Bluetooth Car Mount" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
 
-    <h3>Objectives & Outcomes</h3>
-    <p>The goal was to create a sleek, reliable mount that plays audio over Bluetooth while providing regulated power to charge smartphones. I designed a high-efficiency boost converter circuit, integrated a Bluetooth audio module, and developed firmware to manage pairing and power delivery. The final prototype delivered stable audio performance and charging.</p>
-    <br>
-    <h3>Key Skills & Technologies</h3>
+  <main class="section" style="padding-top:8rem; max-width:800px; margin:0 auto; text-align:justify;">
+    <h2>Bluetooth Audio & Phone Charger Car Mount</h2>
+
+    <h3>The Problem</h3>
+    <p>My BMW 128i’s factory USB port only supplies 1 A and there’s no built-in way to stream audio. Originally I planned a phone mount with integrated USB-C charging and analog aux pass-through, but 1 A wasn’t enough for fast charging and analog aux required bulky switches.</p>
+
+    <h3>The Process</h3>
     <ul>
-      <li>KiCad for schematic wiring</li>
-      <li>Firmware development on a microcontroller for Bluetooth and power management</li>
-      <li>Bluetooth A2DP protocol for stereo audio streaming</li>
-      <li>Power electronics design: boost converter and battery protection</li>
-      <li>3D CAD (Fusion 360) for housing design and prototyping</li>
+      <li><strong>Pivot to Bluetooth audio (late June):</strong> Switched from analog aux to a CSR8635-based Bluetooth receiver powered by the USB port.</li>
+      <li><strong>Prototyping &amp; sourcing (June 27 – July 2):</strong> Cut a USB-A→C cable for power feed, mounted the MakerHawk BT board on perf-proto, and added 10 μF + 0.22 μF decoupling capacitors at the board’s VCC/GND pads (initially misplaced).</li>
+      <li><strong>Noise elimination (July 3 – July 5):</strong> Resoldered caps directly at the regulator pads and introduced a ferrite bead on the 5 V line, reducing hiss to inaudible levels at low volumes.</li>
+      <li><strong>Packaging &amp; installation (July 6 – July 8):</strong> Designed and 3D-printed a slim bezel for a press-fit behind the console trim; heat-shrinked all splices, secured the board with nylon rivets, and routed USB and 3.5 mm cables through OEM openings.</li>
+      <li><strong>Validation (July 9 – July 10):</strong> Verified plug-and-play pairing, zero electrical faults, and stable audio under vibration.</li>
     </ul>
-    <br>
-    <h3>Lessons Learned</h3>
-    <p>I learned to debug complex mixed-signal circuits, manage BLE audio latency, and handle thermal constraints in a compact form factor.</p>
-    <br>
+
+    <h3>Successes &amp; Failures</h3>
+    <h4>Successes</h4>
+    <ul>
+      <li>Seamless Bluetooth pairing and stereo playback without an external amplifier.</li>
+      <li>Reliable power split: the phone charges at up to 2 A while streaming audio.</li>
+      <li>Hiss fully eliminated after proper decoupling placement.</li>
+    </ul>
+    <h4>Failures / Roadblocks</h4>
+    <ul>
+      <li>Initial hiss persisted when capacitors were placed too far from the module’s regulator.</li>
+      <li>Multiple connector types (butt splices, terminal blocks) failed under space constraints before settling on direct solder and heat-shrink.</li>
+    </ul>
+
+    <h3>ECE Skills Gained</h3>
+    <ul>
+      <li>Soldering &amp; protoboard assembly: point-to-point wiring, through-hole and SMD work.</li>
+      <li>Noise filtering: decoupling strategy and EMI suppression with ferrite beads.</li>
+      <li>CAD &amp; 3D printing: custom bezel design for a flush console fit.</li>
+      <li>Automotive integration: power budgeting, ground-loop management, and vibration-proof mounting.</li>
+    </ul>
+
+    <h3>Final Thoughts &amp; Next Steps</h3>
+    <p>This project let me combine my passion for cars with hands-on ECE practice. Next, I’ll refine the enclosure for maximum shock resistance and add a USB on/off switch to prevent parasitic battery drain when the engine is off.</p>
+
+    <img src="project1.jpg" alt="Bluetooth Car Mount Prototype" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+
     <a href="projects.html" class="btn-outline">Back to Projects</a>
   </main>
+
   <footer>
     <p>&copy; 2025 Shyam Tridandapani.</p>
   </footer>
