@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMW Bluetooth Audio | My ePortfolio</title>
+  <title>BMW Bluetooth Audio Adapter | My ePortfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,54 +20,51 @@
   </nav>
 
   <main class="section" style="padding-top:8rem; max-width:800px; margin:0 auto; text-align:justify;">
-    <h2>BMW Bluetooth Audiot</h2>
+    <h2>BMW Bluetooth Audio Adapter</h2>
 
-    <h3>Initial Thoughts</h3>
+    <h3>Project Concept</h3>
+    <p>My project car (a 2010 BMW 128i) did not come with many features that are standard to new cars. Thus, I was forced to use AUX for audio input. I found this cumbersome as I could not charge my phone and play music from it at the same time. Wireless charging was cumbersome and inefficient with a phone mount. In addition, most bluetooth audio retrofits for old cars used FM radio to transmit audio to the car, which seemed lackluster. Thus, I proposed a Bluetooth audio adapter that uses the car’s low‑amperage USB and outputs sound through aux.</p>
     <img src="project1-1.jpg" alt="Factory USB Port" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
-    <p>My BMW 128i’s factory USB port only supplies 1A and there’s no built-in way to stream audio. Originally I planned a phone mount with integrated USB-C charging and analog aux pass-through, but 1A wasn’t enough for fast charging and analog aux required bulky switches.</p>
 
-    <h3>The Process</h3>
-    <img src="project1-2.jpg" alt="Concept Sketch" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
-    <ul>
-      <li><strong>Pivot to Bluetooth audio (late June):</strong> Switched from analog aux to a CSR8635-based Bluetooth receiver powered by the USB port.</li>
-      <li><strong>Prototyping &amp; sourcing (June 27 – July 2):</strong> Cut a USB-A→C cable for power feed, mounted the MakerHawk BT board on perf-proto, and added 10 μF + 0.22 μF decoupling capacitors at the board’s VCC/GND pads (initially misplaced).</li>
-      <li><strong>Noise elimination (July 3 – July 5):</strong> Resoldered caps directly at the regulator pads and introduced a ferrite bead on the 5 V line, reducing hiss to inaudible levels at low volumes.</li>
-      <li><strong>Packaging &amp; installation (July 6 – July 8):</strong> Designed and 3D-printed a slim bezel for a press-fit behind the console trim; heat-shrinked all splices, secured the board with nylon rivets, and routed USB and 3.5 mm cables through OEM openings.</li>
-      <li><strong>Validation (July 9 – July 10):</strong> Verified plug-and-play pairing, zero electrical faults, and stable audio under vibration.</li>
-    </ul>
+    <h3>Project Timeline</h3>
+    <p><strong>Initial Concept (June 13):</strong> Proposed a charging cable that had a bluetooth module piggybacking on it.</p>
+    <p><strong>Pivotal Shift (June 20):</strong> Switched to a CSR8635 Bluetooth receiver powered by the USB port, opting to use the cigarette lighter for phone charging.</p>
+    <p><strong>Prototyping &amp; Sourcing (June 27 – July 2):</strong> Cut a USB‑A→C cable for power, mounted the MakerHawk CSR8635 board on a breadboard, and placed 10 µF + 0.22 µF capacitors in parallel with the battery +/- pads for hiss reduction. I powered the board using its built in micro-USB connector</p>
+    <p><strong>Noise Elimination (July 3 – 5):</strong> Opted to use the battery power +/- pads with a USB A pigtail, finally eliminating low‑volume hiss.</p>
+    <p><strong>Packaging &amp; Installation (July 6 – 8):</strong> Tucked all components inside the center console, secured the board with double-sided tape for easy removal, resoldered and heat-shrinked connections, and routed USB and 3.5 mm cables through openings in the center console.</p>
+    <p><strong>Validation (July 9 – 10):</strong> Confirmed plug‑and‑play pairing, stable audio under vibration, and proper power consumption under the constraints of the 1 A USB port in the car.</p>
     <div class="project-images" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+      <img src="project1-2.jpg" alt="Concept Sketch" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
       <img src="project1-3.jpg" alt="Perf-Board Prototype" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
       <img src="project1-4.jpg" alt="Decoupling Close-Up" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
-      <img src="project1-5.jpg" alt="CAD Bezel Render" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
-      <img src="project1-6.jpg" alt="3D-Printed Bezel" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
+      <img src="project1-6.jpg" alt="Installed Behind Trim" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius);">
     </div>
 
+    <h3>Roadblocks &amp; Successes</h3>
     <h4>Roadblocks</h4>
     <ul>
-      <li>Initial hiss persisted when capacitors were placed on the battery connections without use of a soldered power source.</li>
-      <li>Multiple connector types (butt splices, terminal blocks) failed under space constraints (size of wires) before settling on direct solder and heat-shrink.</li>
+      <li>Persistent hiss until capacitors were properly put in parallel with the power source by using the battery +/- terminals to power the board.</li>
+      <li>Multiple connector attempts (butt splices, terminal blocks) failed under space and wire length constraints before adopting solder and heat-shrink.</li>
+      <li>Always-on nature of the board caused parasitic drain of the car battery, which was remedied by a dongle that allows ON/OFF toggling of a USB port.</li>
     </ul>
-    <br>
     <h4>Successes</h4>
     <ul>
-      <li>Seamless Bluetooth pairing and stereo playback without an external amplifier.</li>
-      <li>Reliable, low power draw. USB toggle switch prevents parasitic loss when car is off.</li>
-      <li>Hiss fully eliminated after proper decoupling placement.</li>
+      <li>Seamless Bluetooth audio streaming without poor or choppy connection.</li>
+      <li>Simultaneous low power audio playback from a single port.</li>
+      <li>Effective unpleasant noise reduction via proper capacitor placement.</li>
     </ul>
-    
 
     <h3>ECE Skills Gained</h3>
     <ul>
-      <li>Soldering &amp; wiring assembly: point-to-point wiring, vibration-resistant connections, through-hole and SMD work.</li>
-      <li>Noise filtering: decoupling strategy and EMI suppression with ferrite beads.</li>
-      <li>Automotive integration: power budgeting, ground-loop management, and vibration-proof mounting.</li>
+      <li>Through-hole Soldering &amp; prototype assembly.</li>
+      <li>Noise filtering: decoupling capacitor strategy.</li>
+      <li>Real-world fabrication and integration: power budgeting, troubleshooting, and vibration-proof mounting.</li>
     </ul>
 
-    <h3>Final Thoughts &amp; Next Steps</h3>
-    <p>This project let me combine my passion for cars with hands-on ECE practice. Next, I’ll refine the enclosure for maximum shock resistance and add a USB on/off switch to prevent parasitic battery drain when the engine is off.</p>
-
-    <img src="project1-7.jpg" alt="Installed Behind Trim" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
-    <img src="project1-8.jpg" alt="Final In-Car View" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+    <h3>Final Thoughts</h3>
+    <p>This project combined my passion for automotive tech with hands-on ECE practice. It reinforced my problem-solving through hands-on, custom hardware solutions that required me to troubleshoot without documentation. Next, I plan to add an enclosure that protects the device from water and dust. Completing this adapter has deepened my interest in embedded automotive systems, motivating me to explore over-the-air firmware updates.</p>
+    <img src="project1-6.jpg" alt="Installed Behind Trim" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
+    <img src="project1-7.jpg" alt="Final In-Car View" style="width:100%; height:auto; object-fit:cover; border-radius:var(--radius); margin:1rem 0;">
 
     <a href="projects.html" class="btn-outline">Back to Projects</a>
   </main>
